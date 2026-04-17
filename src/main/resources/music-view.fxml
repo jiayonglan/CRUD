@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.HBox?>
+
+<VBox alignment="CENTER" spacing="15.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.ieselcaminas.Plataformas_de_Musica.Controller.MusicViewController">
+
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <Label text="Music Streaming Manager" style="-fx-font-weight: bold; -fx-font-size: 18px;"/>
+
+    <TableView fx:id="musicTable" prefHeight="250.0" prefWidth="500.0">
+        <columns>
+            <TableColumn text="Track" prefWidth="150.0">
+                <cellValueFactory><PropertyValueFactory property="trackName" /></cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Artist" prefWidth="150.0">
+                <cellValueFactory><PropertyValueFactory property="artist" /></cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Duration (ms)" prefWidth="100.0">
+                <cellValueFactory><PropertyValueFactory property="durationMs" /></cellValueFactory>
+            </TableColumn>
+        </columns>
+    </TableView>
+
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="Add Music" onAction="#addMusic"/>
+        <Button text="Edit Selected" onAction="#editMusic"/>
+        <Button text="Delete Selected" onAction="#deleteMusic"/>
+        <Button text="Refresh" onAction="#loadMusic"/>
+        <Button text="API: Consultar Artista" onAction="#checkArtistInfo" style="-fx-base: #d1c4e9;"/>
+    </HBox>
+
+    <Separator />
+
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="Export to CSV" onAction="#exportToCSV" style="-fx-base: #e1f5fe;"/>
+        <Button text="Filter Long Songs" onAction="#showOnlyLongSongs" style="-fx-base: #fff9c4;"/>
+    </HBox>
+
+</VBox>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="15" alignment="CENTER" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.ieselcaminas.Plataformas_de_Musica.Controller.EditMusicController"
+      style="-fx-background-color: #f4f4f4;">
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+
+    <Label text="MODIFICAR CANCIÓN" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+    <GridPane hgap="10" vgap="10">
+        <Label text="Nombre:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <TextField fx:id="txtName" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+        <Label text="Artista:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+        <TextField fx:id="txtArtist" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+        <Label text="Duración (ms):" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+        <TextField fx:id="txtDuration" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+    </GridPane>
+
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="Guardar Cambios" onAction="#save" style="-fx-background-color: #4CAF50; -fx-text-fill: white;"/>
+        <Button text="Cancelar" onAction="#cancel"/>
+    </HBox>
+</VBox>
