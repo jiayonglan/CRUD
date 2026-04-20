@@ -29,7 +29,7 @@ public class Music implements Comparable<Music> { // Implementa Comparable para 
     @JoinColumn(name = "genre_id")
     private Genre genre;
 
-    // Constructor vacío requerido por JPA [cite: 39]
+    // Constructor vacío
     public Music() {
     }
 
@@ -60,7 +60,7 @@ public class Music implements Comparable<Music> { // Implementa Comparable para 
     public Genre getGenre() { return genre; }
     public void setGenre(Genre genre) { this.genre = genre; }
 
-    // --- Implementación de Comparable (Requisito 2.3) ---
+    // --- Implementación de Comparable ---
     @Override
     public int compareTo(Music other) {
         // Ordenación natural por nombre de canción
@@ -70,7 +70,7 @@ public class Music implements Comparable<Music> { // Implementa Comparable para 
         return this.trackName.compareToIgnoreCase(other.getTrackName());
     }
 
-    // --- Equals y HashCode (Buenas prácticas para JPA y Colecciones) ---
+    // --- Equals y HashCode ---
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

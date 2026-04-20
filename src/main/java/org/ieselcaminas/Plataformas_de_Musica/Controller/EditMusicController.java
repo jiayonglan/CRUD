@@ -13,6 +13,7 @@ public class EditMusicController {
     private Music music;
     private boolean saveClicked = false;
 
+
     public void setMusic(Music music) {
         this.music = music;
         txtName.setText(music.getTrackName());
